@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc 3.11" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>README-flash_lp</title>
+  <style>
+
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+
+ul.task-list[class]{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+font-size: inherit;
+width: 0.8em;
+margin: 0 0.8em 0.2em -1.6em;
+vertical-align: middle;
+}
+
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+{ counter-reset: source-line 0; }
+pre.numberSource code > span
+{ position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+{ content: counter(source-line);
+position: relative; left: -1em; text-align: right; vertical-align: baseline;
+border: none; display: inline-block;
+-webkit-touch-callout: none; -webkit-user-select: none;
+-khtml-user-select: none; -moz-user-select: none;
+-ms-user-select: none; user-select: none;
+padding: 0 4px; width: 4em;
+color: #aaaaaa;
+}
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa; padding-left: 4px; }
+div.sourceCode
+{ }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } 
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } 
+code span.at { color: #7d9029; } 
+code span.bn { color: #40a070; } 
+code span.bu { color: #008000; } 
+code span.cf { color: #007020; font-weight: bold; } 
+code span.ch { color: #4070a0; } 
+code span.cn { color: #880000; } 
+code span.co { color: #60a0b0; font-style: italic; } 
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } 
+code span.do { color: #ba2121; font-style: italic; } 
+code span.dt { color: #902000; } 
+code span.dv { color: #40a070; } 
+code span.er { color: #ff0000; font-weight: bold; } 
+code span.ex { } 
+code span.fl { color: #40a070; } 
+code span.fu { color: #06287e; } 
+code span.im { color: #008000; font-weight: bold; } 
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } 
+code span.kw { color: #007020; font-weight: bold; } 
+code span.op { color: #666666; } 
+code span.ot { color: #007020; } 
+code span.pp { color: #bc7a00; } 
+code span.sc { color: #4070a0; } 
+code span.ss { color: #bb6688; } 
+code span.st { color: #4070a0; } 
+code span.va { color: #19177c; } 
+code span.vs { color: #4070a0; } 
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } 
+</style>
+  <style type="text/css">:root {
+--brand: #2b0a8c;
+--accent: #e6007e;
+--ink: #1f2430;
+--muted: #667085;
+--line: #e4e7ec;
+--surface: #f7f7fb;
+}
+* {
+box-sizing: border-box;
+}
+html {
+scroll-behavior: smooth;
+}
+body {
+margin: 0 auto;
+max-width: 1120px;
+padding: 50px;
+color: var(--ink);
+background: #ffffff;
+font-family: "Segoe UI", Arial, sans-serif;
+line-height: 1.65;
+}
+a {
+color: var(--brand);
+}
+a:hover {
+color: var(--accent);
+}
+h1 {
+margin-top: 2.7rem;
+padding-bottom: 0.35rem;
+border-bottom: 2px solid var(--line);
+}
+h2 {
+margin-top: 2.4rem;
+padding-bottom: 0.3rem;
+border-bottom: 1px solid var(--line);
+}
+h3,
+h4,
+h5,
+h6 {
+margin-top: 2rem;
+}
+img {
+display: block;
+max-width: 100%;
+height: auto;
+margin: 1rem auto 0.35rem;
+}
+table {
+width: 100%;
+border-collapse: collapse;
+margin: 1.25rem 0;
+}
+th,
+td {
+border: 1px solid var(--line);
+padding: 0.7rem;
+vertical-align: top;
+}
+th {
+background: var(--surface);
+text-align: left;
+}
+blockquote {
+margin: 1.2rem 0;
+padding: 0.7rem 1rem;
+border-left: 4px solid var(--brand);
+background: var(--surface);
+}
+code {
+font-family: Consolas, "Courier New", monospace;
+}
+pre {
+overflow-x: auto;
+padding: 1rem;
+border-radius: 8px;
+background: var(--surface);
+}
+
+body > h1:first-of-type {
+margin: -50px calc(50% - 50vw) 3rem;
+padding: 3.5rem max(50px, calc((100vw - 1120px) / 2));
+border: 0;
+background: linear-gradient(135deg, #250777, #3e16a3);
+color: #ffffff;
+font-size: clamp(2rem, 5vw, 3.5rem);
+line-height: 1.1;
+}
+@media (max-width: 640px) {
+body {
+padding: 20px;
+}
+body > h1:first-of-type {
+margin-top: -20px;
+padding: 2.5rem 20px;
+}
+}
+</style>
+</head>
+<body>
+<h1 id="flash-lp-software-building-block">Flash LP Software Building
+Block</h1>
+<h2 id="overview">Overview</h2>
+<p>This Software Building Block (SBB) demonstrates basic use of the
+Renesas Flash LP (<code>r_flash_lp</code>) driver for code flash and
+data flash operations. The reference application initializes Flash LP
+and lets the user select flash blocks from a serial-terminal menu, then
+demonstrates blank check, erase, write, read/verify, and code-flash
+access-window operations.</p>
+<p>This SBB supports these boards:</p>
+<ul>
+<li>FPB-RA0L1</li>
+<li>FPB-RA2E3</li>
+</ul>
+<h2 id="what-use-case-does-this-sbb-demonstrate">What use case does this
+SBB demonstrate?</h2>
+<p>The SBB demonstrates a basic nonvolatile-memory workflow using Flash
+LP:</p>
+<ol type="1">
+<li>Open the Flash LP driver.</li>
+<li>Select data flash or code flash from the demo terminal.</li>
+<li>Select a valid flash block.</li>
+<li>Blank-check the selected area.</li>
+<li>Erase the block when it is not blank.</li>
+<li>Blank-check it again after erase.</li>
+<li>Read and display the selected flash contents.</li>
+<li>Write a known 64-byte pattern.</li>
+<li>Read the data back with a memory copy.</li>
+<li>Compare the read data with the written data.</li>
+<li>For code flash, additionally demonstrate setting and clearing an
+access window.</li>
+</ol>
+<p>The demo builds its write buffer using byte values <code>0x00</code>
+through <code>0x3F</code>, which makes the read-back data easy to
+inspect in the terminal.</p>
+<h2 id="hardware-requirements">Hardware requirements</h2>
+<p>The supplied documentation requires one supported Renesas RA board
+and an appropriate USB cable for programming and debugging.</p>
+<h3 id="fpb-ra0l1">FPB-RA0L1</h3>
+<p>Place jumper <strong>J9 on pins 1-2</strong> to use the on-board
+debug functionality.</p>
+<h3 id="fpb-ra2e3">FPB-RA2E3</h3>
+<p>Close <strong>E25, E28, E46, and E47</strong> to use J-Link On-Board
+VCOM for the serial terminal.</p>
+<h2 id="what-does-the-sbb-core-code-do">What does the SBB core code
+do?</h2>
+<p>The reusable SBB layer is implemented by:</p>
+<ul>
+<li><code>flash_lp_ep.c</code></li>
+<li><code>flash_lp_ep.h</code></li>
+</ul>
+<p>It wraps the Flash LP driver and provides the operations needed by
+the reference application:</p>
+<ul>
+<li>Open and close the Flash LP instance.</li>
+<li>Blank-check an address range.</li>
+<li>Erase one flash block.</li>
+<li>Write 64 bytes to a flash address.</li>
+<li>Set a code-flash access window.</li>
+<li>Clear a code-flash access window.</li>
+<li>Handle Flash LP callback events used by background operation
+(BGO).</li>
+<li>Expose the most recent blank-check result.</li>
+<li>Define flash block sizes, address calculations, and board-dependent
+ranges used by the example.</li>
+</ul>
+<p>The implementation uses callback flags for
+<code>FLASH_EVENT_NOT_BLANK</code>, <code>FLASH_EVENT_BLANK</code>,
+<code>FLASH_EVENT_ERASE_COMPLETE</code>, and
+<code>FLASH_EVENT_WRITE_COMPLETE</code>. When data-flash BGO is
+configured, the SBB waits for the corresponding callback state before
+returning from relevant operations.</p>
+<h2 id="demoreference-application-versus-reusable-sbb-code">Demo/reference
+application versus reusable SBB code</h2>
+<h3 id="reusable-sbb-code">Reusable SBB code</h3>
+<p><code>flash_lp_ep.c</code> and <code>flash_lp_ep.h</code> are the
+reusable Flash LP layer. They contain the Flash LP API wrappers, BGO
+callback handling, data/code flash address calculations, block-size
+definitions, and access-window wrappers.</p>
+<h3 id="demoreference-application-code">Demo/reference application
+code</h3>
+<p><code>flash_lp_example_app.c</code> and
+<code>flash_lp_example_app.h</code> implement the interactive
+demonstration. They are responsible for:</p>
+<ul>
+<li>Initializing the UART console.</li>
+<li>Displaying SBB/FSP information.</li>
+<li>Presenting data-flash and code-flash menu choices.</li>
+<li>Accepting and validating block numbers.</li>
+<li>Building the demonstration write pattern.</li>
+<li>Sequencing blank check, erase, write, read, and compare
+operations.</li>
+<li>Printing data in hexadecimal.</li>
+<li>Disabling interrupts during code-flash program/erase operations in
+the demonstrated flow.</li>
+<li>Demonstrating code-flash access-window set/erase/write/clear
+behavior.</li>
+<li>Error reporting and breakpoint handling.</li>
+</ul>
+<p>The application’s entry point is:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="dt">void</span> flash_lp_example_app_run<span class="op">(</span><span class="dt">void</span><span class="op">);</span></span></code></pre></div>
+<p>The source identifies this as the single function called from
+<code>hal_entry.c</code>.</p>
+<h2 id="which-public-functions-should-i-look-at-first">Which public
+functions should I look at first?</h2>
+<h3 id="flash_lp_init"><code>flash_lp_init()</code></h3>
+<div class="sourceCode" id="cb2"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>fsp_err_t flash_lp_init<span class="op">(</span><span class="dt">void</span><span class="op">);</span></span></code></pre></div>
+<p>Opens the generated Flash LP instance using <code>g_flash_ctrl</code>
+and <code>g_flash_cfg</code>.</p>
+<h3 id="flash_lp_blank_check"><code>flash_lp_blank_check()</code></h3>
+<div class="sourceCode" id="cb3"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>fsp_err_t flash_lp_blank_check<span class="op">(</span><span class="dt">uint32_t</span> block_addr<span class="op">);</span></span></code></pre></div>
+<p>Checks <code>BLOCK_SIZE</code> bytes beginning at
+<code>block_addr</code>. The result is exposed through
+<code>g_blank_check_result</code>. If a BGO blank check is active, the
+wrapper waits for the blank/not-blank callback event.</p>
+<h3 id="flash_lp_erase"><code>flash_lp_erase()</code></h3>
+<div class="sourceCode" id="cb4"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>fsp_err_t flash_lp_erase<span class="op">(</span><span class="dt">uint32_t</span> block_addr<span class="op">);</span></span></code></pre></div>
+<p>Erases <code>NUM_BLOCKS</code>, which is configured as one block in
+this SBB. For data flash with BGO enabled, the wrapper waits for
+<code>FLASH_EVENT_ERASE_COMPLETE</code>.</p>
+<h3 id="flash_lp_write"><code>flash_lp_write()</code></h3>
+<div class="sourceCode" id="cb5"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>fsp_err_t flash_lp_write<span class="op">(</span><span class="dt">uint8_t</span> <span class="op">*</span> src_address<span class="op">,</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>                         <span class="dt">uint32_t</span> flash_address<span class="op">);</span></span></code></pre></div>
+<p>Writes <code>BLOCK_SIZE</code> bytes from the source buffer to the
+selected flash address. For data flash with BGO enabled, the function
+waits for the write-complete callback.</p>
+<h3 id="flash_lp_access_window_set"><code>flash_lp_access_window_set()</code></h3>
+<div class="sourceCode" id="cb6"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>fsp_err_t flash_lp_access_window_set<span class="op">(</span><span class="dt">uint32_t</span> block_addr<span class="op">);</span></span></code></pre></div>
+<p>Sets a Flash LP code-flash access window using addresses calculated
+by <code>FLASH_CF_START_ADDR()</code> and
+<code>FLASH_CF_END_ADDR()</code>.</p>
+<h3 id="flash_lp_access_window_clear"><code>flash_lp_access_window_clear()</code></h3>
+<div class="sourceCode" id="cb7"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>fsp_err_t flash_lp_access_window_clear<span class="op">(</span><span class="dt">void</span><span class="op">);</span></span></code></pre></div>
+<p>Clears the configured code-flash access window.</p>
+<h3 id="flash_lp_deinit"><code>flash_lp_deinit()</code></h3>
+<div class="sourceCode" id="cb8"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="dt">void</span> flash_lp_deinit<span class="op">(</span><span class="dt">void</span><span class="op">);</span></span></code></pre></div>
+<p>Closes the Flash LP instance when it is open.</p>
+<h3 id="bgo_callback"><code>bgo_callback()</code></h3>
+<div class="sourceCode" id="cb9"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="dt">void</span> bgo_callback<span class="op">(</span>flash_callback_args_t <span class="op">*</span> p_args<span class="op">);</span></span></code></pre></div>
+<p>Converts Flash LP callback events into internal flags consumed by the
+blank-check, erase, and write wrappers.</p>
+<h2 id="what-configuration-assumptions-were-made-for-the-reference-boards">What
+configuration assumptions were made for the reference boards?</h2>
+<h3 id="general-operation-size">General operation size</h3>
+<p>The SBB defines:</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="pp">#define BLOCK_SIZE  </span><span class="op">(</span><span class="dv">64</span><span class="bu">U</span><span class="op">)</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="pp">#define NUM_BLOCKS  </span><span class="op">(</span><span class="dv">1</span><span class="bu">U</span><span class="op">)</span></span></code></pre></div>
+<p>The demonstrated blank-check and write operations therefore use 64
+bytes, while erase requests one configured flash block.</p>
+<h3 id="fpb-ra0l1-1">FPB-RA0L1</h3>
+<p>For FPB-RA0L1, the supplied code defines:</p>
+<ul>
+<li>Data flash start: <code>0x40100000</code></li>
+<li>Data flash end: <code>0x401003FF</code></li>
+<li>Data flash block size used by the address calculator: 256 bytes</li>
+<li>Demo data-flash block range: 0 through 3</li>
+<li>Code flash block size: 2048 bytes</li>
+<li>Code flash block 10: <code>0x00005000</code></li>
+<li>Code flash end: <code>0x0000FFFF</code> (block 31)</li>
+<li>Demo code-flash block range: 10 through 31</li>
+<li>Access-window block range: 10 through 30</li>
+</ul>
+<h3 id="fpb-ra2e3-1">FPB-RA2E3</h3>
+<p>For FPB-RA2E3, the supplied code defines:</p>
+<ul>
+<li>Data flash start: <code>0x40100000</code></li>
+<li>Data flash end: <code>0x401007FF</code></li>
+<li>Data flash block size used by the address calculator: 1024
+bytes</li>
+<li>Demo data-flash block range: 0 through 1</li>
+<li>Code flash block size: 2048 bytes</li>
+<li>Code flash block 10: <code>0x00005000</code></li>
+<li>Code flash end: <code>0x0000FFFF</code> (block 31)</li>
+<li>Demo code-flash block range: 10 through 31</li>
+<li>Access-window block range: 10 through 30</li>
+</ul>
+<h3 id="data-flash-bgo">Data-flash BGO</h3>
+<p>The SBB checks <code>g_flash_cfg.data_flash_bgo</code>. When BGO is
+enabled for data flash, blank check, erase, and write completion depend
+on the callback configured for <code>g_flash_cfg</code> and handled by
+<code>bgo_callback()</code>.</p>
+<h3 id="input-assumptions">Input assumptions</h3>
+<p>The application’s input buffer is 16 bytes. The README specifies that
+user input should not exceed <strong>15 bytes</strong> and states that
+operation is not guaranteed for non-integer or incorrectly formatted
+input.</p>
+<h2 id="important-code-flash-access-window-warning">Important code-flash
+access-window warning</h2>
+<p>The supplied README warns that using a block number below 10 for
+code-flash operations can lock the board because of
+<code>R_FLASH_LP_AccessWindowSet()</code>.</p>
+<p>The application itself validates normal code-flash and access-window
+selections starting at block 10.</p>
+<p>The source also warns that a wrongly configured access window
+persists across a power cycle and can prevent programming of code flash.
+Its demonstrated access-window sequence clears the window after the
+erase/write operations.</p>
+<p>This is a destructive flash demonstration. Do not repurpose the
+example’s address ranges for application firmware or persistent product
+data without first validating the target memory map and protecting any
+flash that must be retained.</p>
+<h2 id="what-must-i-change-for-my-board-or-application">What must I
+change for my board or application?</h2>
+<h3 id="flash-memory-map">Flash memory map</h3>
+<p>The address constants and block calculations in
+<code>flash_lp_ep.h</code> are device dependent. For a different MCU,
+validate:</p>
+<ul>
+<li>Data-flash start and end addresses.</li>
+<li>Data-flash erase block size.</li>
+<li>Code-flash block size.</li>
+<li>Code-flash start/end addresses used by the demo.</li>
+<li>Permitted block-selection ranges.</li>
+<li>Access-window range.</li>
+</ul>
+<p>Do not rely solely on the header’s generic <code>else</code> branch
+for a board that the supplied README does not identify as supported.</p>
+<h3 id="generated-flash-lp-configuration">Generated Flash LP
+configuration</h3>
+<p>The SBB expects generated objects named:</p>
+<pre class="text"><code>g_flash_ctrl
+g_flash_cfg</code></pre>
+<p>If data-flash BGO is enabled, the generated configuration must
+provide callback behavior compatible with
+<code>bgo_callback()</code>.</p>
+<h3 id="flash-contents-and-reserved-regions">Flash contents and reserved
+regions</h3>
+<p>The demo erases and writes the selected block. An integrating
+application must choose addresses that do not destroy firmware,
+configuration, boot information, calibration data, or other content that
+must be retained.</p>
+<h3 id="code-flash-execution-considerations">Code-flash execution
+considerations</h3>
+<p>The reference application disables interrupts before performing its
+code-flash operation and re-enables them later. The source explains that
+this is done to prevent vector-table access while code flash is in
+program/erase mode.</p>
+<p>If the code-flash flow is changed, the execution and interrupt
+arrangement must continue to satisfy the target Flash LP
+requirements.</p>
+<h3 id="write-size">Write size</h3>
+<p>The SBB’s current wrapper writes exactly 64 bytes
+(<code>BLOCK_SIZE</code>). Change the wrapper and caller consistently if
+the product requires a different write amount, while respecting the
+target Flash LP programming requirements.</p>
+<h3 id="clocks-and-timing">Clocks and timing</h3>
+<p>The supplied hand-written files do not specify flash clock
+configuration or measured erase/write timing. Any target-specific clock
+requirements must be established from the generated FSP configuration
+and the target Flash LP requirements.</p>
+<h3 id="memory">Memory</h3>
+<p>The reference application allocates two local 64-byte buffers for its
+flash operation: one read buffer and one write buffer. The supplied
+files do not provide the complete RAM/ROM footprint of the SBB or
+generated FSP driver.</p>
+<h3 id="task-priorities-and-execution-model">Task priorities and
+execution model</h3>
+<p>The supplied application does not define an RTOS or task priorities.
+BGO completion is handled by callback flags, but the wrappers wait in
+polling loops for those flags. An RTOS-based integration must define its
+own scheduling and synchronization approach.</p>
+<h3 id="console-middleware">Console middleware</h3>
+<p>The terminal UI uses <code>console/uart_console.h</code> and standard
+I/O. These are demo dependencies. The reusable Flash LP wrappers can be
+called by another application control layer without retaining the
+interactive menu.</p>
+<h2 id="dependencies">Dependencies</h2>
+<h3 id="renesas-fsp-flash-lp">Renesas FSP Flash LP</h3>
+<p>The reusable SBB uses:</p>
+<ul>
+<li><code>R_FLASH_LP_Open()</code></li>
+<li><code>R_FLASH_LP_BlankCheck()</code></li>
+<li><code>R_FLASH_LP_Erase()</code></li>
+<li><code>R_FLASH_LP_Write()</code></li>
+<li><code>R_FLASH_LP_AccessWindowSet()</code></li>
+<li><code>R_FLASH_LP_AccessWindowClear()</code></li>
+<li><code>R_FLASH_LP_Close()</code></li>
+</ul>
+<h3 id="generated-fsp-configuration">Generated FSP configuration</h3>
+<p>The code includes <code>hal_data.h</code> and uses
+<code>g_flash_ctrl</code> and <code>g_flash_cfg</code>.</p>
+<h3 id="callback-events">Callback events</h3>
+<p>BGO handling uses:</p>
+<ul>
+<li><code>FLASH_EVENT_NOT_BLANK</code></li>
+<li><code>FLASH_EVENT_BLANK</code></li>
+<li><code>FLASH_EVENT_ERASE_COMPLETE</code></li>
+<li><code>FLASH_EVENT_WRITE_COMPLETE</code></li>
+</ul>
+<h3 id="consolereference-application">Console/reference application</h3>
+<p>The reference application uses:</p>
+<ul>
+<li><code>console/uart_console.h</code></li>
+<li><code>uart_console_init()</code></li>
+<li><code>uart_console_has_char()</code></li>
+<li><code>uart_console_flush()</code></li>
+<li><code>printf()</code></li>
+<li><code>fgets()</code></li>
+<li><code>atoi()</code></li>
+<li><code>memcpy()</code></li>
+<li><code>memcmp()</code></li>
+<li><code>memset()</code></li>
+<li><code>strcspn()</code></li>
+<li><code>R_FSP_VersionGet()</code></li>
+</ul>
+<p>It also uses <code>__disable_irq()</code>,
+<code>__enable_irq()</code>, and <code>__BKPT()</code> in its
+code-flash/error-handling flows.</p>
+<h2 id="serial-terminal-configuration">Serial terminal
+configuration</h2>
+<p>The supplied README specifies:</p>
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Port</td>
+<td>Port provided by J-Link On-Board</td>
+</tr>
+<tr>
+<td>Speed</td>
+<td>115200</td>
+</tr>
+<tr>
+<td>Data</td>
+<td>8 bit</td>
+</tr>
+<tr>
+<td>Parity</td>
+<td>None</td>
+</tr>
+<tr>
+<td>Stop bits</td>
+<td>1 bit</td>
+</tr>
+<tr>
+<td>Flow control</td>
+<td>None</td>
+</tr>
+</tbody>
+</table>
+<p>For Tera Term:</p>
+<ul>
+<li>Receive newline: <strong>CR</strong></li>
+<li>Transmit newline: <strong>CR</strong></li>
+<li><strong>Local echo</strong> enabled</li>
+</ul>
+<h2 id="what-behavior-and-performance-were-demonstrated-or-measured">What
+behavior and performance were demonstrated or measured?</h2>
+<h3 id="demonstrated-behavior">Demonstrated behavior</h3>
+<p>The supplied application demonstrates:</p>
+<ul>
+<li>Flash LP initialization and cleanup.</li>
+<li>Selection of data-flash or code-flash operations from a
+terminal.</li>
+<li>Validation of a selected block against configured address
+limits.</li>
+<li>Blank checking before erase.</li>
+<li>Erasing one block when required.</li>
+<li>Blank checking after erase.</li>
+<li>Writing a 64-byte test pattern.</li>
+<li>Reading flash by copying memory into a local buffer.</li>
+<li>Verifying that data read after the write matches the source
+buffer.</li>
+<li>Data-flash BGO callback handling when enabled.</li>
+<li>Setting and clearing a code-flash access window.</li>
+<li>Disabling interrupts around the demonstrated code-flash
+operation.</li>
+</ul>
+<h3 id="performance-measurements">Performance measurements</h3>
+<p>The supplied files do <strong>not</strong> provide measured erase
+time, write time, blank-check time, CPU utilization, flash endurance,
+RAM/ROM footprint, BGO latency, or other performance results.</p>
+<p><code>BLOCK_SIZE = 64</code> describes the amount processed by the
+example’s blank-check/write operation. It is not a performance
+measurement. This SBB should therefore be treated as a functional Flash
+LP reference rather than a performance benchmark.</p>
+<h2 id="what-files-are-safe-to-modify-and-what-files-are-generated-preset-or-demo-only">What
+files are safe to modify and what files are generated, preset, or
+demo-only?</h2>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th>File</th>
+<th>Classification</th>
+<th>Guidance</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>flash_lp_ep.c</code></td>
+<td>Reusable SBB implementation</td>
+<td>Modify when intentionally changing Flash LP wrappers, BGO
+waiting/callback behavior, write size, or access-window operations.</td>
+</tr>
+<tr>
+<td><code>flash_lp_ep.h</code></td>
+<td>Reusable SBB interface and device presets</td>
+<td>Modify carefully when changing public APIs, block/address
+calculations, buffer sizes, or board-device memory-map assumptions.</td>
+</tr>
+<tr>
+<td><code>flash_lp_example_app.c</code></td>
+<td>Demo/reference application</td>
+<td>Appropriate location for changing menu flow, test patterns, terminal
+interaction, validation policy, presentation, and demo sequencing.</td>
+</tr>
+<tr>
+<td><code>flash_lp_example_app.h</code></td>
+<td>Demo/reference application interface/presets</td>
+<td>Contains the demo entry point, text, commands, and displayed
+board-dependent block ranges.</td>
+</tr>
+<tr>
+<td><code>readme.txt</code></td>
+<td>Existing example documentation</td>
+<td>Source for the validated board list, debug/VCOM setup, access-window
+warning, input restrictions, and serial-terminal configuration.</td>
+</tr>
+</tbody>
+</table>
+<p>The hand-written files depend on generated FSP content through
+<code>hal_data.h</code>. The supplied files do not enumerate the
+generated files themselves, so individual generated files are not
+classified here.</p>
+<h2 id="what-happens-if-i-modify-the-source-and-later-adopt-a-newer-sbb-release">What
+happens if I modify the source and later adopt a newer SBB release?</h2>
+<p>Local modifications to <code>flash_lp_ep.c</code> or
+<code>flash_lp_ep.h</code> create differences in the reusable SBB layer.
+This can be particularly important for this SBB because
+<code>flash_lp_ep.h</code> contains MCU-dependent flash addresses and
+block geometry.</p>
+<p>To reduce upgrade conflicts:</p>
+<ul>
+<li>Keep terminal menus, test patterns, formatted output, and other
+demonstration behavior in <code>flash_lp_example_app.*</code>.</li>
+<li>Keep board/device memory map assumptions explicit and review them
+separately from generic Flash LP operations.</li>
+<li>Prefer generated FSP configuration for settings owned by the Flash
+LP configurator rather than duplicating those settings in hand-written
+source.</li>
+<li>Keep reusable-source modifications focused and document why each
+change is required.</li>
+<li>When adopting a newer SBB release, compare the new
+<code>flash_lp_ep.c</code> and <code>flash_lp_ep.h</code> with the
+locally modified versions before carrying changes forward.</li>
+<li>Revalidate flash addresses, block sizes, selected block ranges, BGO
+configuration, callback handling, code-flash execution behavior, and
+access-window behavior after an update.</li>
+</ul>
+<p>The supplied files do not define an automated migration or
+source-compatibility mechanism for later SBB versions. Compatibility
+must therefore be validated by the integrating project.</p>
+<h2 id="recommended-reading-order">Recommended reading order</h2>
+<ol type="1">
+<li><strong><code>flash_lp_ep.h</code></strong> to understand flash
+geometry, address calculations, public functions, and board-dependent
+configuration.</li>
+<li><strong><code>flash_lp_ep.c</code></strong> to understand how the
+SBB wraps blank check, erase, write, BGO events, and access-window
+APIs.</li>
+<li><strong><code>flash_lp_example_app.c</code></strong> to understand
+the full demo sequence and destructive flash operations.</li>
+<li><strong><code>flash_lp_example_app.h</code></strong> to understand
+menu commands and displayed block-range limits.</li>
+<li><strong><code>readme.txt</code></strong> to review the validated
+hardware list, board setup, access-window warning, and terminal
+configuration.</li>
+</ol>
+</body>
+</html>
